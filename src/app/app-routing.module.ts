@@ -10,7 +10,8 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'cambio-pass',
     loadChildren: () => import('./cambio-pass/cambio-pass.module').then( m => m.CambioPassPageModule)
   },
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: 'registro-estudiantil',
     loadChildren: () => import('./registro-estudiantil/registro-estudiantil.module').then( m => m.RegistroEstudiantilPageModule)
   },
+  {
+    path: 'scanner-qr',
+    loadChildren: () => import('./scanner-qr/scanner-qr.module').then( m => m.ScannerQrPageModule)
+  }
 
 ];
 
