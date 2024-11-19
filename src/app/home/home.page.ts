@@ -32,4 +32,7 @@ export class HomePage {
       this.navCtrl.navigateForward('/login'); // Redirige al login si no está autenticado
     }
   }
+  navigateToscaner() {
+    this.navCtrl.navigateForward('/scanner-qr');
+  }
 }
