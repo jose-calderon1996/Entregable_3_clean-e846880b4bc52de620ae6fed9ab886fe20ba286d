@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Perfil del Estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="perfil-container">
+    <ion-card class="perfil-card">
+      <ion-card-header>
+        <ion-card-title class="perfil-title">{{ nombre }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item class="perfil-item">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>
+              <h3 class="label-title">Nombre</h3>
+              <p>{{ nombre }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item class="perfil-item">
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label>
+              <h3 class="label-title">Comuna</h3>
+              <p>{{ comuna }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item class="perfil-item">
+            <ion-icon slot="start" name="map"></ion-icon>
+            <ion-label>
+              <h3 class="label-title">Dirección</h3>
+              <p>{{ direccion }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item class="perfil-item">
+            <ion-icon slot="start" name="calendar"></ion-icon>
+            <ion-label>
+              <h3 class="label-title">Fecha de Nacimiento</h3>
+              <p>{{ fechaNacimiento }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item class="perfil-item">
+            <ion-icon slot="start" name="school"></ion-icon>
+            <ion-label>
+              <h3 class="label-title">Carrera</h3>
+              <p>{{ carrera }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    
+    <div class="ir-asistencia">
+      <ion-button expand="full" color="success" (click)="navegarEscaner()">
+        Ir a Registrar mi Asistencia
+      </ion-button>
+    </div>
+    <div class="cerrar-sesion">
+      <ion-button expand="full" color="danger" (click)="cerrarSesion()">
+        Cerrar Sesión
+      </ion-button>
+    </div>
+
+    <div class="info-extra">
+      <p>Asegúrate de revisar tus datos y mantener tu información actualizada. ¡Buena suerte en tus estudios!</p>
+    </div>
+  </div>
+</ion-content>
+
+<style>
+  .perfil-container {
+    padding: 16px;
+  }
+  .perfil-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff; /* Color blanco para el título */
+  }
+  .perfil-card {
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  }
+  .perfil-item {
+    --background: #f9f9f9;
+    --border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+  ion-icon {
+    font-size: 24px;
+    color: #3880ff; /* Color de los íconos */
+  }
+  .label-title {
+    color: #4caf50; /* Color verde para los labels */
+    margin: 0; /* Elimina el margen por defecto */
+  }
+  .info-extra {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    text-align: center;
+  }
+  .info-extra p {
+    color: #333; /* Color del texto */
+    font-size: 1em; /* Tamaño de texto ajustado */
+  }
+</style>

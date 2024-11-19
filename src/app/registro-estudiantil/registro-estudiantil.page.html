@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="success" icon-only="true"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="success" class="ion-text-center">Registro Estudiantil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding center-content">
+  
+
+  <form (ngSubmit)="registrar()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="success" >Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="datosUsuario.nombre" name="nombre" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="success" position="floating">Correo</ion-label>
+            <ion-input type="email" [(ngModel)]="datosUsuario.correo" name="correo" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="success" position="floating">Comuna</ion-label>
+            <ion-input type="text" [(ngModel)]="datosUsuario.comuna" name="comuna" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="success" position="floating">Dirección</ion-label>
+            <ion-input type="text" [(ngModel)]="datosUsuario.direccion" name="direccion" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="success" position="floating">Fecha de Nacimiento</ion-label>
+            <ion-input type="date" [(ngModel)]="datosUsuario.fechaNacimiento" name="fechaNacimiento" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="success" position="floating">Carrera</ion-label>
+            <ion-input type="text" [(ngModel)]="datosUsuario.carrera" name="carrera" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label color="success" position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="datosUsuario.contrasena" name="contrasena" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button expand="full" type="submit" color="success">Registrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <!-- Sección de texto adicional con fondo blanco -->
+  <div style="background-color: white; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h3 style="text-align: center; color: #3880ff;">¿Por qué registrarse?</h3>
+    <p style="text-align: justify; color: #333;">
+      Registrarse es el primer paso para acceder a todas las funcionalidades de nuestra aplicación. 
+      Al completar su registro, podrá asistir a clases de manera eficiente, 
+      recibir notificaciones importantes sobre su asistencia y acceder a recursos diseñados 
+      para facilitar su experiencia académica. ¡No espere más, regístrese y forme parte de 
+      nuestra comunidad educativa!
+    </p>
+  </div>
+</ion-content>

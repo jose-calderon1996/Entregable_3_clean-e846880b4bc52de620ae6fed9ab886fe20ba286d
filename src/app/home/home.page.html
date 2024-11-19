@@ -1,0 +1,33 @@
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color="success"></ion-menu-button>
+      </ion-buttons>
+      <ion-title color="success" class="ion-text-center">Presente!</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="navigateToLogin()" color="success">Login</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding center-content">
+    <img src="https://img.freepik.com/vector-gratis/asistencia-papel-lista-comprobacion-dibujos-animados-icono-vectorial-ilustracion-educacion-negocio-aislado-plano_138676-10698.jpg" alt="Asistencia" style="width: 100%; height: auto; margin-bottom: 20px;" />
+
+    <ion-card>
+      <p class="ion-text-center">
+        Bienvenido a <strong>Presente</strong>, la app de registro de asistencia para estudiantes. Con
+        <strong>Presente</strong>, podrás registrar tu asistencia de manera rápida y fácil escaneando tu código QR en
+        cada clase. ¡Simplifica tu día y asegura un control de asistencia eficiente con nuestra aplicación!
+      </p>
+      <h3 class="ion-text-center">¿Aún no tienes cuenta de estudiante?</h3>
+    </ion-card>
+
+    <ion-button (click)="navegarRegistro()" fill="outline" color="success" expand="block" class="ion-text-center">
+      Regístrate aquí
+    </ion-button>
+    <ion-button (click)="navigateperfil()" fill="outline" color="success" expand="block" class="ion-text-center">
+      Mi perfil
+    </ion-button>
+  </ion-content>
+</div>

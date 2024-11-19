@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home" color="success" icon-only="true"></ion-back-button>
+      </ion-buttons>
+      <ion-title color="success" class="ion-text-center">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding center-content">
+    <img src="https://i.pinimg.com/736x/3f/5a/d8/3f5ad816179850d23695910e906554a7.jpg" alt="Login" style="width: 100%; height: auto; margin-bottom: 20px;" />
+
+    <ion-item>
+      <ion-label color="success" position="floating">Correo</ion-label>
+      <ion-input type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color="success" position="floating">Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password">
+        <ion-input-password-toggle color="success" slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </ion-item>
+
+    <ion-button fill="outline" (click)="validadInnicio()" color="success" expand="block">
+      Iniciar sesión
+    </ion-button>
+    <ion-button color="success" (click)="vistaPass()" fill="clear">
+      ¿Cambiar contraseña?
+    </ion-button>
+  </ion-content>
+</ion-content>
