@@ -1,43 +1,40 @@
+// scanner-qr.page.ts
 import { Component } from '@angular/core';
-import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
-import { Platform } from '@ionic/angular';
+import { BarcodeScanner } from 'capacitor-barcode-scanner';
 
 @Component({
-  selector: 'app-scanner',
-  templateUrl: './scanner.page.html',
-  styleUrls: ['./scanner.page.scss'],
+  selector: 'app-scanner-qr', // Asegúrate de que el selector también coincida con el archivo
+  templateUrl: './scanner-qr.page.html', // Cambia esto si es necesario
+  styleUrls: ['./scanner-qr.page.scss'],
 })
-export class ScannerPage {
-  scannedData: any = null;
+export class ScannerQrPage {  // Cambia el nombre de la clase a ScannerQrPage
+  textoEscaneado: string = ''; 
+  mensaje: string = '';
+  datosQR: any = {};
 
-  constructor(private platform: Platform) {}
+  constructor() {}
 
-  ionViewWillEnter() {
-    // Se detiene la cámara de escaneo al salir de la página
-    BarcodeScanner.hideBackground(); 
+  getKeys(obj: any): string[] {
+    return Object.keys(obj);
   }
 
-  startScan() {
-    // Iniciar el escaneo
-    BarcodeScanner.startScan().then((result) => {
-      if (result.hasContent) {
-        this.scannedData = result.content;
+  async escanear() {
+    try {
+      const resultado: any = await BarcodeScanner.scan();
+      if (resultado && resultado.hasOwnProperty('code')) {
+        this.textoEscaneado = resultado.code;
+        try {
+          this.datosQR = JSON.parse(this.textoEscaneado);
+          this.mensaje = 'QR escaneado y datos extraídos correctamente.';
+        } catch (error) {
+          this.mensaje = 'El contenido escaneado no es un JSON válido.';
+          this.datosQR = {};
+        }
       } else {
-        alert('No se encontró un código QR válido');
+        this.mensaje = 'No se detectó contenido en el QR.';
       }
-    }).catch((err) => {
-      console.error('Error al escanear: ', err);
-      alert('Hubo un error al intentar escanear el código');
-    });
-  }
-
-  stopScan() {
-    // Detener la cámara de escaneo
-    BarcodeScanner.stopScan();
-  }
-
-  toggleTorch() {
-    // Activar o desactivar el foco de la cámara
-    BarcodeScanner.toggleTorch();
+    } catch (error) {
+      this.mensaje = 'Ocurrió un error durante el escaneo.';
+    }
   }
 }
