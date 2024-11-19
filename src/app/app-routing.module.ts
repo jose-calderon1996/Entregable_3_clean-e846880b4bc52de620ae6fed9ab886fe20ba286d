@@ -26,6 +26,10 @@ const routes: Routes = [
     path: 'registro-estudiantil',
     loadChildren: () => import('./registro-estudiantil/registro-estudiantil.module').then( m => m.RegistroEstudiantilPageModule)
   },
+  {
+    path: 'scanner-qr',
+    loadChildren: () => import('./scanner-qr/scanner-qr.module').then( m => m.ScannerQrPageModule)
+  },
 
 ];
 
